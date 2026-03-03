@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/lib/theme-provider";
 
 const NAV_ITEMS = [
   { label: "機能", href: "/#features" },
@@ -13,9 +14,10 @@ const NAV_ITEMS = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-rm-border bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-rm-border bg-rm-surface/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="text-lg font-semibold tracking-tight text-rm-primary">
           Roomly
@@ -31,6 +33,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded text-rm-text-muted hover:text-rm-primary transition-colors"
+            title={theme === "dark" ? "ライトモード" : "ダークモード"}
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
           <a
             href="https://roomly.jp"
             className="rounded bg-rm-accent px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
@@ -39,17 +48,26 @@ export function Header() {
           </a>
         </nav>
 
-        <button
-          className="sm:hidden text-rm-text-secondary"
-          onClick={() => setOpen(!open)}
-          aria-label="メニュー"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 sm:hidden">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded text-rm-text-muted hover:text-rm-primary transition-colors"
+            title={theme === "dark" ? "ライトモード" : "ダークモード"}
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className="text-rm-text-secondary"
+            onClick={() => setOpen(!open)}
+            aria-label="メニュー"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <nav className="border-t border-rm-border bg-white px-4 pb-4 sm:hidden">
+        <nav className="border-t border-rm-border bg-rm-surface px-4 pb-4 sm:hidden">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
