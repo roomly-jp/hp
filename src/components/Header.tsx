@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 
 const NAV_ITEMS = [
@@ -35,10 +35,15 @@ export function Header() {
           ))}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded text-rm-text-muted hover:text-rm-primary transition-colors"
+            className="relative w-9 h-5 rounded-full transition-colors"
+            style={{ background: theme === "dark" ? "var(--rm-accent)" : "var(--rm-border)" }}
             title={theme === "dark" ? "ライトモード" : "ダークモード"}
+            aria-label="テーマ切り替え"
           >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            <span
+              className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform duration-200"
+              style={{ transform: theme === "dark" ? "translateX(16px)" : "translateX(0)" }}
+            />
           </button>
           <a
             href="https://roomly.jp"
@@ -48,13 +53,18 @@ export function Header() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 sm:hidden">
+        <div className="flex items-center gap-3 sm:hidden">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded text-rm-text-muted hover:text-rm-primary transition-colors"
+            className="relative w-9 h-5 rounded-full transition-colors"
+            style={{ background: theme === "dark" ? "var(--rm-accent)" : "var(--rm-border)" }}
             title={theme === "dark" ? "ライトモード" : "ダークモード"}
+            aria-label="テーマ切り替え"
           >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            <span
+              className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform duration-200"
+              style={{ transform: theme === "dark" ? "translateX(16px)" : "translateX(0)" }}
+            />
           </button>
           <button
             className="text-rm-text-secondary"
