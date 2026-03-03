@@ -126,7 +126,7 @@ export default function Home() {
                 key={stat.label}
                 className="rounded-2xl border border-rm-border bg-rm-surface p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <p className="text-3xl font-bold text-rm-accent">{stat.value}</p>
+                <p className="text-3xl font-bold text-rm-emerald">{stat.value}</p>
                 <p className="mt-1 text-sm font-semibold text-rm-text">{stat.label}</p>
                 <p className="mt-2 text-xs text-rm-text-muted">{stat.sub}</p>
               </div>
@@ -147,7 +147,7 @@ export default function Home() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-rm-primary to-rm-accent text-white shadow-lg">
                   <step.icon size={28} />
                 </div>
-                <div className="mx-auto mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-rm-accent/10 text-sm font-bold text-rm-accent">
+                <div className="mx-auto mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-rm-emerald/10 text-sm font-bold text-rm-emerald">
                   {step.number}
                 </div>
                 <h3 className="mt-3 text-lg font-bold text-rm-text">
@@ -205,16 +205,16 @@ export default function Home() {
           </p>
           <div className="mt-14 rounded-2xl border-2 border-rm-accent bg-white p-8 shadow-lg">
             <div className="text-center">
-              <p className="text-sm font-semibold text-rm-accent">全機能利用可能</p>
+              <p className="text-sm font-semibold text-rm-emerald">全機能利用可能</p>
               <div className="mt-3">
-                <span className="text-4xl font-bold text-rm-text">¥0</span>
+                <span className="text-4xl font-bold text-rm-emerald">¥0</span>
                 <span className="ml-1 text-rm-text-muted">/ 10区画まで</span>
               </div>
             </div>
             <div className="mt-8 space-y-3 text-sm text-rm-text-secondary">
               <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
                 <span>〜10区画</span>
-                <span className="font-bold text-rm-accent">無料</span>
+                <span className="font-bold text-rm-emerald">無料</span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
                 <span>11〜50区画</span>
