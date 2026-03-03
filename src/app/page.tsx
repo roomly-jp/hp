@@ -75,35 +75,35 @@ export default function Home() {
   return (
     <>
       {/* ヒーロー */}
-      <section className="bg-gradient-to-br from-rm-hero-start via-rm-hero-mid to-rm-hero-end px-4 py-28 text-center text-white sm:py-36">
+      <section className="bg-rm-primary px-4 py-28 text-center text-white sm:py-36">
         <div className="mx-auto max-w-3xl animate-slide-up">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             賃貸管理を、
             <br className="sm:hidden" />
             もっとシンプルに。
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-blue-200 sm:text-xl">
+          <p className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg">
             物件・入居者・家賃・修繕——すべてを一つの画面で。
           </p>
           <div className="mt-10">
             <a
               href="https://roomly.jp"
-              className="inline-block rounded-xl bg-white px-10 py-4 text-base font-bold text-rm-primary shadow-xl transition-all hover:scale-105 hover:shadow-2xl sm:text-lg"
+              className="inline-block rounded bg-rm-accent px-10 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-rm-accent-light"
             >
               無料で始める
             </a>
           </div>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-blue-200">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[13px] text-white/50">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-emerald-400" />
+              <CheckCircle2 size={14} className="text-rm-accent-light" />
               10区画まで無料
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-emerald-400" />
+              <CheckCircle2 size={14} className="text-rm-accent-light" />
               クレジットカード不要
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-emerald-400" />
+              <CheckCircle2 size={14} className="text-rm-accent-light" />
               最短5分で開始
             </span>
           </div>
@@ -113,10 +113,10 @@ export default function Home() {
       {/* 選ばれる理由 */}
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
+          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
             選ばれる理由
           </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {[
               { value: "¥0", label: "初期費用", sub: "導入コストゼロで始められます" },
               { value: "10区画", label: "無料で使える", sub: "小規模からでも安心のフリープラン" },
@@ -124,11 +124,11 @@ export default function Home() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl border border-rm-border bg-rm-surface p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded bg-rm-surface p-8 text-center shadow-sm"
               >
-                <p className="text-3xl font-bold text-rm-emerald">{stat.value}</p>
-                <p className="mt-1 text-sm font-semibold text-rm-text">{stat.label}</p>
-                <p className="mt-2 text-xs text-rm-text-muted">{stat.sub}</p>
+                <p className="text-3xl font-semibold tabular-nums text-rm-accent">{stat.value}</p>
+                <p className="mt-1 text-[13px] font-medium text-rm-text">{stat.label}</p>
+                <p className="mt-2 text-[12px] text-rm-text-muted">{stat.sub}</p>
               </div>
             ))}
           </div>
@@ -138,22 +138,22 @@ export default function Home() {
       {/* 3ステップ */}
       <section className="bg-rm-surface px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
+          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
             3ステップで始められます
           </h2>
           <div className="mt-14 grid gap-8 sm:grid-cols-3">
             {steps.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-rm-primary to-rm-accent text-white shadow-lg">
-                  <step.icon size={28} />
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded bg-rm-accent/10 text-rm-accent">
+                  <step.icon size={24} />
                 </div>
-                <div className="mx-auto mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-rm-emerald/10 text-sm font-bold text-rm-emerald">
+                <div className="mx-auto mt-3 flex h-7 w-7 items-center justify-center rounded-full bg-rm-accent text-[12px] font-medium text-white">
                   {step.number}
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-rm-text">
+                <h3 className="mt-3 text-[15px] font-semibold text-rm-text">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm text-rm-text-secondary">
+                <p className="mt-2 text-[13px] text-rm-text-secondary">
                   {step.description}
                 </p>
               </div>
@@ -165,27 +165,27 @@ export default function Home() {
       {/* 機能紹介 */}
       <section id="features" className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
+          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
             必要な機能を、ひとつに
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-rm-text-secondary">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-[14px] text-rm-text-secondary">
             賃貸管理に必要な機能をすべて備えています。
             <br className="hidden sm:block" />
             複数のツールを行き来する必要はありません。
           </p>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="group rounded-2xl border border-rm-border bg-rm-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded bg-rm-surface p-6 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rm-accent/10 text-rm-accent transition-colors group-hover:bg-rm-accent group-hover:text-white">
-                  <feature.icon size={24} />
+                <div className="flex h-10 w-10 items-center justify-center rounded bg-rm-accent/10 text-rm-accent">
+                  <feature.icon size={20} />
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-rm-primary">
+                <h3 className="mt-4 text-[15px] font-semibold text-rm-primary">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-rm-text-secondary">
+                <p className="mt-2 text-[13px] leading-relaxed text-rm-text-secondary">
                   {feature.description}
                 </p>
               </div>
@@ -197,45 +197,45 @@ export default function Home() {
       {/* 料金 */}
       <section id="pricing" className="bg-rm-surface px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-xl">
-          <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
+          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
             料金
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-rm-text-secondary">
+          <p className="mx-auto mt-4 max-w-xl text-center text-[14px] text-rm-text-secondary">
             10区画まで無料。それ以上は区画数に応じたシンプルな料金体系です。
           </p>
-          <div className="mt-14 rounded-2xl border-2 border-rm-accent bg-white p-8 shadow-lg">
+          <div className="mt-14 rounded bg-white p-8 shadow-sm border-t-3 border-t-rm-accent">
             <div className="text-center">
-              <p className="text-sm font-semibold text-rm-emerald">全機能利用可能</p>
+              <p className="text-[11px] font-medium uppercase tracking-wider text-rm-accent">全機能利用可能</p>
               <div className="mt-3">
-                <span className="text-4xl font-bold text-rm-emerald">¥0</span>
+                <span className="text-4xl font-semibold tabular-nums text-rm-accent">¥0</span>
                 <span className="ml-1 text-rm-text-muted">/ 10区画まで</span>
               </div>
             </div>
-            <div className="mt-8 space-y-3 text-sm text-rm-text-secondary">
-              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+            <div className="mt-8 space-y-2 text-[13px] text-rm-text-secondary">
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
                 <span>〜10区画</span>
-                <span className="font-bold text-rm-emerald">無料</span>
+                <span className="font-semibold text-rm-accent">無料</span>
               </div>
-              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
                 <span>11〜50区画</span>
-                <span className="font-bold text-rm-text">¥5,000/月</span>
+                <span className="font-semibold text-rm-text">¥5,000/月</span>
               </div>
-              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
                 <span>51〜100区画</span>
-                <span className="font-bold text-rm-text">¥10,000/月</span>
+                <span className="font-semibold text-rm-text">¥10,000/月</span>
               </div>
-              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
                 <span>101区画〜</span>
-                <span className="font-bold text-rm-text">お問い合わせ</span>
+                <span className="font-semibold text-rm-text">お問い合わせ</span>
               </div>
             </div>
-            <ul className="mt-6 space-y-2 text-sm text-rm-text-secondary">
+            <ul className="mt-6 space-y-2 text-[13px] text-rm-text-secondary">
               {["初期費用なし", "全プラン全機能利用可能", "クレジットカード不要で開始", "メールサポート付き"].map(
                 (item) => (
                   <li key={item} className="flex items-center gap-2.5">
                     <CheckCircle2
-                      size={16}
-                      className="shrink-0 text-rm-success"
+                      size={14}
+                      className="shrink-0 text-rm-accent"
                     />
                     {item}
                   </li>
@@ -244,7 +244,7 @@ export default function Home() {
             </ul>
             <a
               href="https://roomly.jp"
-              className="mt-8 block rounded-xl bg-gradient-to-r from-rm-primary to-rm-accent py-3.5 text-center text-sm font-bold text-white transition-all hover:shadow-lg"
+              className="mt-8 block rounded bg-rm-accent py-3 text-center text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
             >
               無料で始める
             </a>
@@ -255,10 +255,10 @@ export default function Home() {
       {/* お問い合わせ */}
       <section id="contact" className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
+          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
             お気軽にご相談ください
           </h2>
-          <p className="mt-4 text-center text-rm-text-secondary">
+          <p className="mt-4 text-center text-[14px] text-rm-text-secondary">
             導入のご検討・ご不明点・協業のご相談など、お気軽にお問い合わせください。
           </p>
           <div className="mt-10">

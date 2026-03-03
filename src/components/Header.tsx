@@ -16,12 +16,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-rm-border bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
-        <Link href="/" className="text-xl font-bold tracking-tight text-rm-primary">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-rm-primary">
           Roomly
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm sm:flex">
+        <nav className="hidden items-center gap-7 text-[13px] sm:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -33,7 +33,7 @@ export function Header() {
           ))}
           <a
             href="https://roomly.jp"
-            className="rounded-lg bg-rm-accent px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-rm-accent-light"
+            className="rounded bg-rm-accent px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
           >
             ログイン
           </a>
@@ -44,7 +44,7 @@ export function Header() {
           onClick={() => setOpen(!open)}
           aria-label="メニュー"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -62,7 +62,7 @@ export function Header() {
           ))}
           <a
             href="https://roomly.jp"
-            className="mt-2 block rounded-lg bg-rm-accent py-2.5 text-center text-sm font-semibold text-white"
+            className="mt-2 block rounded bg-rm-accent py-2.5 text-center text-sm font-medium text-white"
           >
             ログイン
           </a>
