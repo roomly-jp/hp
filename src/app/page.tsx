@@ -196,61 +196,42 @@ export default function Home() {
 
       {/* 料金 */}
       <section id="pricing" className="bg-rm-surface px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-xl">
           <h2 className="text-center text-2xl font-bold text-rm-primary sm:text-3xl">
-            料金プラン
+            料金
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-rm-text-secondary">
-            まずは無料で、すべての基本機能をお試しください。
+            10区画まで無料。それ以上は区画数に応じたシンプルな料金体系です。
           </p>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2">
-            {/* フリープラン */}
-            <div className="rounded-2xl border border-rm-border bg-white p-8">
-              <h3 className="text-lg font-bold text-rm-primary">フリー</h3>
-              <div className="mt-4">
+          <div className="mt-14 rounded-2xl border-2 border-rm-accent bg-white p-8 shadow-lg">
+            <div className="text-center">
+              <p className="text-sm font-semibold text-rm-accent">全機能利用可能</p>
+              <div className="mt-3">
                 <span className="text-4xl font-bold text-rm-text">¥0</span>
-                <span className="ml-1 text-rm-text-muted">/月</span>
+                <span className="ml-1 text-rm-text-muted">/ 10区画まで</span>
               </div>
-              <ul className="mt-6 space-y-3 text-sm text-rm-text-secondary">
-                {["10区画まで", "基本機能すべて利用可能", "メールサポート"].map(
-                  (item) => (
-                    <li key={item} className="flex items-center gap-2.5">
-                      <CheckCircle2
-                        size={16}
-                        className="shrink-0 text-rm-success"
-                      />
-                      {item}
-                    </li>
-                  )
-                )}
-              </ul>
-              <a
-                href="https://roomly.jp"
-                className="mt-8 block rounded-xl border-2 border-rm-accent py-3 text-center text-sm font-bold text-rm-accent transition-colors hover:bg-rm-accent hover:text-white"
-              >
-                無料で始める
-              </a>
             </div>
-            {/* スタンダードプラン */}
-            <div className="relative rounded-2xl border-2 border-rm-accent bg-white p-8 shadow-lg">
-              <div className="absolute -top-3.5 left-6 rounded-full bg-gradient-to-r from-rm-primary to-rm-accent px-4 py-1 text-xs font-bold text-white">
-                おすすめ
+            <div className="mt-8 space-y-3 text-sm text-rm-text-secondary">
+              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+                <span>〜10区画</span>
+                <span className="font-bold text-rm-accent">無料</span>
               </div>
-              <h3 className="text-lg font-bold text-rm-primary">
-                スタンダード
-              </h3>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-rm-text">
-                  ¥5,000〜
-                </span>
-                <span className="ml-1 text-rm-text-muted">/月</span>
+              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+                <span>11〜50区画</span>
+                <span className="font-bold text-rm-text">¥5,000/月</span>
               </div>
-              <ul className="mt-6 space-y-3 text-sm text-rm-text-secondary">
-                {[
-                  "11〜50区画: ¥5,000/月",
-                  "51〜100区画: ¥10,000/月",
-                  "全機能利用可能・優先サポート",
-                ].map((item) => (
+              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+                <span>51〜100区画</span>
+                <span className="font-bold text-rm-text">¥10,000/月</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg bg-rm-surface p-3">
+                <span>101区画〜</span>
+                <span className="font-bold text-rm-text">お問い合わせ</span>
+              </div>
+            </div>
+            <ul className="mt-6 space-y-2 text-sm text-rm-text-secondary">
+              {["初期費用なし", "全プラン全機能利用可能", "クレジットカード不要で開始", "メールサポート付き"].map(
+                (item) => (
                   <li key={item} className="flex items-center gap-2.5">
                     <CheckCircle2
                       size={16}
@@ -258,15 +239,15 @@ export default function Home() {
                     />
                     {item}
                   </li>
-                ))}
-              </ul>
-              <a
-                href="https://roomly.jp"
-                className="mt-8 block rounded-xl bg-rm-accent py-3 text-center text-sm font-bold text-white transition-colors hover:bg-rm-accent-light"
-              >
-                無料で始める
-              </a>
-            </div>
+                )
+              )}
+            </ul>
+            <a
+              href="https://roomly.jp"
+              className="mt-8 block rounded-xl bg-gradient-to-r from-rm-primary to-rm-accent py-3.5 text-center text-sm font-bold text-white transition-all hover:shadow-lg"
+            >
+              無料で始める
+            </a>
           </div>
         </div>
       </section>
