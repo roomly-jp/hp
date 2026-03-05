@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 
 const NAV_ITEMS = [
+  { label: "ホーム", href: "/" },
   { label: "機能", href: "/#features" },
   { label: "料金", href: "/#pricing" },
   { label: "コラム", href: "/column" },
