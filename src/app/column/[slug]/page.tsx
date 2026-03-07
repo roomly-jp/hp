@@ -54,11 +54,15 @@ export default async function BlogPostPage({
       if (line.startsWith("**") && line.endsWith("**"))
         return `<p><strong>${line.slice(2, -2)}</strong></p>`;
       if (line.startsWith("- ")) {
-        const item = line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        const item = line.slice(2)
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
         return `<p class="ml-4">・${item}</p>`;
       }
       if (line.trim() === "") return "";
-      const formatted = line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      const formatted = line
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
       return `<p>${formatted}</p>`;
     })
     .join("\n");
