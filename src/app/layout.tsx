@@ -21,10 +21,20 @@ export const metadata: Metadata = {
   },
   description:
     "賃貸管理会社向けSaaS。物件・入居者・契約・家賃・修繕・オーナー送金を一つの画面で一元管理。10区画まで無料。",
+  alternates: {
+    canonical: "https://hp.roomly.jp",
+  },
   openGraph: {
     siteName: "Roomly",
     locale: "ja_JP",
     type: "website",
+    url: "https://hp.roomly.jp",
+  },
+  twitter: {
+    card: "summary",
+    title: "Roomly | 賃貸管理を、もっとシンプルに。",
+    description:
+      "賃貸管理会社向けSaaS。物件・入居者・契約・家賃・修繕・オーナー送金を一つの画面で一元管理。10区画まで無料。",
   },
 };
 
