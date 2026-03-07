@@ -53,8 +53,13 @@ export default async function BlogPostPage({
       if (line.startsWith("## ")) return `<h2>${line.slice(3)}</h2>`;
       if (line.startsWith("**") && line.endsWith("**"))
         return `<p><strong>${line.slice(2, -2)}</strong></p>`;
+      if (line.startsWith("- ")) {
+        const item = line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+        return `<p class="ml-4">・${item}</p>`;
+      }
       if (line.trim() === "") return "";
-      return `<p>${line}</p>`;
+      const formatted = line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      return `<p>${formatted}</p>`;
     })
     .join("\n");
 
