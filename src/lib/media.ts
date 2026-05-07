@@ -28,9 +28,15 @@ function collectMdxFiles(dir: string): string[] {
   return results;
 }
 
-export function getAllArticles(): Article[] {
+function isPublished(date: string): boolean {
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  return new Date(date) <= today;
+}
+
+function loadAllArticles(): Article[] {
   const files = collectMdxFiles(CONTENT_DIR);
-  const articles = files.map((filePath) => {
+  return files.map((filePath) => {
     const slug = path.basename(filePath).replace(/\.mdx$/, "");
     const raw = fs.readFileSync(filePath, "utf-8");
     const { data, content } = matter(raw);
@@ -45,29 +51,22 @@ export function getAllArticles(): Article[] {
       content,
     };
   });
-  return articles.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+}
+
+// 公開済み記事のみ（一覧ページ・sitemap用）
+export function getAllArticles(): Article[] {
+  return loadAllArticles()
+    .filter((a) => isPublished(a.date))
+    .sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 }
 
 export function getArticle(slug: string): Article | undefined {
-  const files = collectMdxFiles(CONTENT_DIR);
-  const filePath = files.find((f) => path.basename(f) === `${slug}.mdx`);
-  if (!filePath) return undefined;
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-  return {
-    slug,
-    title: data.title || "",
-    description: data.description || "",
-    date: data.date || "",
-    lastModified: data.lastModified || undefined,
-    category: data.category || "",
-    tags: data.tags || [],
-    content,
-  };
+  return loadAllArticles().find((a) => a.slug === slug);
 }
 
+// 全記事のslug（SSG用 — 未来記事もページ生成する）
 export function getAllSlugs(): string[] {
-  return getAllArticles().map((a) => a.slug);
+  return loadAllArticles().map((a) => a.slug);
 }

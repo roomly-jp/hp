@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
 };
 
+// 毎日0時に新記事が公開されるので、1時間ごとに再生成
+export const revalidate = 3600;
+
 export default function BlogIndex() {
   const posts = getAllArticles();
 

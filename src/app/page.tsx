@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { getAllArticles } from "@/lib/media";
 
+export const revalidate = 3600;
+
 const features = [
   {
     icon: Building2,
