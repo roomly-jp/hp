@@ -28,13 +28,6 @@ function collectMdxFiles(dir: string): string[] {
   return results;
 }
 
-// 公開済みかどうか（dateが今日以前ならtrue）
-function isPublished(date: string): boolean {
-  const today = new Date();
-  today.setHours(23, 59, 59, 999);
-  return new Date(date) <= today;
-}
-
 export function getAllArticles(): Article[] {
   const files = collectMdxFiles(CONTENT_DIR);
   const articles = files.map((filePath) => {
@@ -52,11 +45,9 @@ export function getAllArticles(): Article[] {
       content,
     };
   });
-  return articles
-    .filter((a) => isPublished(a.date))
-    .sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+  return articles.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export function getArticle(slug: string): Article | undefined {
@@ -65,7 +56,6 @@ export function getArticle(slug: string): Article | undefined {
   if (!filePath) return undefined;
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
-  if (!isPublished(data.date || "")) return undefined;
   return {
     slug,
     title: data.title || "",
