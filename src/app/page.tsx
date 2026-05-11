@@ -8,10 +8,10 @@ import {
   CheckCircle2,
   UserPlus,
   Rocket,
-  Play,
 } from "lucide-react";
 import Link from "next/link";
 import { getAllArticles } from "@/lib/media";
+import { DemoButtonHero } from "@/components/DemoButton";
 
 export const revalidate = 3600;
 
@@ -114,13 +114,7 @@ export default function Home() {
             >
               無料で始める
             </a>
-            <a
-              href="https://roomly.jp/login"
-              className="inline-flex items-center gap-2 rounded border border-white/30 px-8 py-3.5 text-[15px] font-medium text-white/90 transition-colors hover:bg-white/10 hover:border-white/50"
-            >
-              <Play size={14} />
-              デモを試す
-            </a>
+            <DemoButtonHero />
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[13px] text-white/50">
             <span className="flex items-center gap-1.5">
