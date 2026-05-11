@@ -95,10 +95,10 @@ export default function PricingPage() {
       <section className="px-7 py-24">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-[clamp(24px,3vw,36px)] font-medium tracking-tight text-rm-primary">
-            まずは無料で試してみませんか？
+            賃貸管理を、今日から変える。
           </h2>
           <p className="mt-4 text-[15px] text-rm-text-secondary">
-            10区画まで無料。クレジットカード不要で、すぐに始められます。
+            10区画まで完全無料。クレジットカード不要、最短5分で始められます。
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="https://roomly.jp/login?demo=1" className="inline-flex h-12 items-center rounded-full border border-rm-border-strong px-[22px] text-[15px] font-medium text-rm-primary transition-colors hover:bg-rm-surface">
