@@ -194,7 +194,7 @@ export default async function BlogPostPage({
               10区画まで無料。クレジットカード不要で、今すぐ始められます。
             </p>
             <a
-              href="https://roomly.jp"
+              href="https://roomly.jp/signup"
               className="mt-6 inline-block rounded bg-rm-accent px-8 py-3 text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
             >
               無料で始める

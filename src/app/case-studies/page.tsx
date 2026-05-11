@@ -181,7 +181,7 @@ export default function CaseStudiesPage() {
             10区画まで無料。クレジットカード不要で、すぐに始められます。
           </p>
           <a
-            href="https://roomly.jp"
+            href="https://roomly.jp/signup"
             className="mt-8 inline-block rounded bg-rm-accent px-10 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-rm-accent-light"
           >
             無料で始める

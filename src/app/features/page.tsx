@@ -244,7 +244,7 @@ export default function FeaturesPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="https://roomly.jp"
+              href="https://roomly.jp/signup"
               className="rounded bg-rm-accent px-8 py-3 text-[14px] font-medium text-white transition-colors hover:bg-rm-accent-light"
             >
               無料で始める

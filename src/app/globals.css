@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
-
 html {
   scroll-behavior: smooth;
 }
@@ -28,7 +26,7 @@ html {
   --rm-hero: #1a1a17;
 
   /* type */
-  --font-serif: "Instrument Serif", "Cormorant Garamond", "Times New Roman", serif;
+  --font-serif: var(--font-instrument-serif), "Cormorant Garamond", "Times New Roman", serif;
   --font-mono: ui-monospace, "JetBrains Mono", monospace;
 
   /* radii */
