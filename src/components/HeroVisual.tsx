@@ -1,8 +1,8 @@
 export function HeroVisual() {
   return (
-    <div className="relative h-[380px] sm:h-[520px]" aria-hidden>
+    <div className="relative h-[480px] sm:h-[520px]" aria-hidden>
       {/* Dashboard mock */}
-      <div className="tile absolute top-5 left-0 w-[78%] overflow-hidden p-0" style={{ transform: "rotate(-1.2deg)" }}>
+      <div className="tile absolute top-5 left-0 w-[70%] sm:w-[78%] overflow-hidden p-0" style={{ transform: "rotate(-1.2deg)" }}>
         <div className="frame-head">
           <span className="frame-dot" /><span className="frame-dot" /><span className="frame-dot" />
           <span className="frame-title">roomly.jp / dashboard</span>
@@ -36,7 +36,7 @@ export function HeroVisual() {
       </div>
 
       {/* Rent payment tile */}
-      <div className="tile absolute top-0 right-0 w-[200px]" style={{ transform: "rotate(2.5deg)" }}>
+      <div className="tile absolute top-0 right-0 w-[160px] sm:w-[200px]" style={{ transform: "rotate(2.5deg)" }}>
         <div className="flex items-center gap-2">
           <div className="grid h-7 w-7 place-items-center rounded-[7px] bg-rm-accent-tint text-rm-accent-deep">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="6" width="18" height="12" rx="1.5" /><circle cx="12" cy="12" r="2.6" /></svg>
@@ -48,7 +48,7 @@ export function HeroVisual() {
       </div>
 
       {/* Maintenance tile */}
-      <div className="tile absolute top-[250px] right-[30px] w-[220px]" style={{ transform: "rotate(-2deg)" }}>
+      <div className="tile absolute top-[300px] sm:top-[250px] right-[10px] sm:right-[30px] w-[190px] sm:w-[220px]" style={{ transform: "rotate(-2deg)" }}>
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-[#d97757]" />
           <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-rm-text-muted">修繕依頼 · 対応中</div>
@@ -63,7 +63,7 @@ export function HeroVisual() {
       </div>
 
       {/* Owner remittance tile */}
-      <div className="tile absolute bottom-0 left-[60px] w-[230px]" style={{ transform: "rotate(1.5deg)" }}>
+      <div className="tile absolute bottom-0 left-[20px] sm:left-[60px] w-[200px] sm:w-[230px]" style={{ transform: "rotate(1.5deg)" }}>
         <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-rm-text-muted">オーナー送金 · 5月分</div>
         <div className="mt-2 text-[22px] font-medium tracking-tight">¥2,847,500</div>
         <div className="mt-3 flex justify-between text-[11px] text-rm-text-muted">
