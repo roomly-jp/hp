@@ -3,21 +3,11 @@
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
-const INQUIRY_TYPES = [
-  "サービスについて",
-  "導入のご相談",
-  "料金について",
-  "協業・パートナーシップ",
-  "投資・事業提携",
-  "その他",
-];
-
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     company: "",
-    type: INQUIRY_TYPES[0],
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -37,7 +27,7 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error();
       setStatus("sent");
-      setForm({ name: "", email: "", company: "", type: INQUIRY_TYPES[0], message: "" });
+      setForm({ name: "", email: "", company: "", message: "" });
     } catch {
       setStatus("error");
     }
@@ -74,23 +64,6 @@ export default function ContactForm() {
       className="mx-auto max-w-xl rounded bg-rm-surface p-8 shadow-sm"
     >
       <div className="space-y-5">
-        <div>
-          <label className="block text-[13px] font-medium text-rm-text">
-            お問い合わせ種別
-          </label>
-          <select
-            value={form.type}
-            onChange={(e) => setForm({ ...form, type: e.target.value })}
-            className={inputClass}
-          >
-            {INQUIRY_TYPES.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
             <label className="block text-[13px] font-medium text-rm-text">
