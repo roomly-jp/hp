@@ -2,22 +2,31 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 
 const NAV_ITEMS = [
   { label: "ホーム", href: "/" },
   { label: "機能", href: "/features" },
-  { label: "料金", href: "/pricing" },
+  { label: "料金", href: "/#pricing", anchor: "pricing" },
   { label: "導入事例", href: "/case-studies" },
   { label: "FAQ", href: "/faq" },
   { label: "コラム", href: "/column" },
   { label: "お問い合わせ", href: "/contact" },
 ];
 
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  el.scrollIntoView({ behavior: "smooth" });
+  return true;
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-rm-border bg-rm-surface/95 backdrop-blur">
@@ -31,6 +40,14 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={
+                item.anchor && pathname === "/"
+                  ? (e) => {
+                      e.preventDefault();
+                      scrollToSection(item.anchor!);
+                    }
+                  : undefined
+              }
               className="text-rm-text-secondary transition-colors hover:text-rm-primary"
             >
               {item.label}
@@ -85,7 +102,13 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                setOpen(false);
+                if (item.anchor && pathname === "/") {
+                  e.preventDefault();
+                  scrollToSection(item.anchor);
+                }
+              }}
               className="block py-3 text-sm text-rm-text-secondary transition-colors hover:text-rm-primary"
             >
               {item.label}
