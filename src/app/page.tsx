@@ -14,11 +14,7 @@ const CHECK_SVG = (
   </svg>
 );
 
-const ARROW_SVG = (
-  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+
 
 function Dot() {
   return <span className="mt-2 h-[5px] w-[5px] shrink-0 rounded-full bg-rm-accent" />;
@@ -74,7 +70,7 @@ export default function Home() {
                 デモを試す
               </a>
               <a href="https://roomly.jp/signup" className="inline-flex h-12 items-center gap-2 rounded-full bg-rm-primary px-[22px] text-[15px] font-medium text-rm-bg transition-colors hover:bg-rm-accent-deep hover:text-white">
-                無料で始める {ARROW_SVG}
+                無料で始める
               </a>
             </div>
             <div className="mt-7 flex flex-wrap gap-[18px] text-[13px] text-rm-text-muted">
@@ -233,7 +229,7 @@ export default function Home() {
               </ul>
               <div className="mt-7 flex flex-wrap gap-2.5">
                 <a href="https://roomly.jp/login?demo=1" className="inline-flex h-10 items-center rounded-full border border-rm-border-strong px-[18px] text-[14px] font-medium text-rm-primary transition-colors hover:bg-rm-surface-tint">デモを試す</a>
-                <a href="https://roomly.jp/signup" className="inline-flex h-10 items-center gap-2 rounded-full bg-rm-primary px-[18px] text-[14px] font-medium text-rm-bg transition-colors hover:bg-rm-accent-deep hover:text-white">無料で始める {ARROW_SVG}</a>
+                <a href="https://roomly.jp/signup" className="inline-flex h-10 items-center gap-2 rounded-full bg-rm-primary px-[18px] text-[14px] font-medium text-rm-bg transition-colors hover:bg-rm-accent-deep hover:text-white">無料で始める</a>
               </div>
               <p className="mt-4 text-[12px] text-rm-text-muted">※ 10区画を超えても自動課金されません。カード登録・プラン切り替えはご自身のタイミングで。</p>
             </div>
@@ -302,7 +298,7 @@ export default function Home() {
                   デモを試す
                 </a>
                 <a href="https://roomly.jp/signup" className="inline-flex h-12 items-center gap-2 rounded-full bg-rm-bg px-[22px] text-[15px] font-medium text-rm-primary transition-colors hover:bg-rm-accent hover:text-white">
-                  無料で始める {ARROW_SVG}
+                  無料で始める
                 </a>
               </div>
             </div>
