@@ -194,10 +194,10 @@ export default function FaqPage() {
       <section className="bg-rm-surface-tint px-7 py-24">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-[clamp(24px,3vw,36px)] font-medium tracking-tight text-rm-primary">
-            解決しない場合はお気軽にご相談ください
+            まずは無料で試してみませんか？
           </h2>
           <p className="mt-4 text-[15px] text-rm-text-secondary">
-            このページで解決しないご質問がございましたら、お問い合わせフォームからご連絡ください。
+            10区画まで無料。クレジットカード不要で、すぐに始められます。
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="https://roomly.jp/login?demo=1" className="inline-flex h-12 items-center rounded-full border border-rm-border-strong px-[22px] text-[15px] font-medium text-rm-primary transition-colors hover:bg-rm-surface">
