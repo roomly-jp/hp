@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   UserPlus,
   Rocket,
+  Play,
 } from "lucide-react";
 import Link from "next/link";
 import { getAllArticles } from "@/lib/media";
@@ -106,12 +107,19 @@ export default function Home() {
           <p className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg">
             物件・入居者・家賃・修繕——すべてを一つの画面で。
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://roomly.jp"
               className="inline-block rounded bg-rm-accent px-10 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-rm-accent-light"
             >
               無料で始める
+            </a>
+            <a
+              href="https://roomly.jp/login"
+              className="inline-flex items-center gap-2 rounded border border-white/30 px-8 py-3.5 text-[15px] font-medium text-white/90 transition-colors hover:bg-white/10 hover:border-white/50"
+            >
+              <Play size={14} />
+              デモを試す
             </a>
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[13px] text-white/50">
@@ -238,16 +246,32 @@ export default function Home() {
                 <span className="font-semibold text-rm-accent">無料</span>
               </div>
               <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>11〜50区画</span>
-                <span className="font-semibold text-rm-text">¥5,000/月</span>
+                <span>〜50区画</span>
+                <span className="font-semibold text-rm-text">¥5,000（税込）/月</span>
               </div>
               <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>51〜100区画</span>
-                <span className="font-semibold text-rm-text">¥10,000/月</span>
+                <span>〜100区画</span>
+                <span className="font-semibold text-rm-text">¥10,000（税込）/月</span>
               </div>
               <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>101区画〜</span>
-                <span className="font-semibold text-rm-text">お問い合わせ</span>
+                <span>〜300区画</span>
+                <span className="font-semibold text-rm-text">¥15,000（税込）/月</span>
+              </div>
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
+                <span>〜500区画</span>
+                <span className="font-semibold text-rm-text">¥20,000（税込）/月</span>
+              </div>
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
+                <span>〜1,000区画</span>
+                <span className="font-semibold text-rm-text">¥25,000（税込）/月</span>
+              </div>
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
+                <span>〜2,000区画</span>
+                <span className="font-semibold text-rm-text">¥30,000（税込）/月</span>
+              </div>
+              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
+                <span>2,001区画〜</span>
+                <span className="font-semibold text-rm-text">1,000区画ごとに+¥5,000（税込）/月</span>
               </div>
             </div>
             <ul className="mt-6 space-y-2 text-[13px] text-rm-text-secondary">
@@ -269,6 +293,16 @@ export default function Home() {
             >
               無料で始める
             </a>
+            <a
+              href="https://roomly.jp/login"
+              className="mt-3 flex items-center justify-center gap-2 rounded border border-rm-border py-3 text-[13px] font-medium text-rm-text-secondary transition-colors hover:bg-rm-bg"
+            >
+              <Play size={13} />
+              デモ環境を試す（登録不要）
+            </a>
+            <p className="mt-2 text-center text-[11px] text-rm-text-muted">
+              ID: demo@roomly.jp / PW: demo1234
+            </p>
           </div>
         </div>
       </section>
