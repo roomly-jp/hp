@@ -6,6 +6,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/lib/theme-provider";
 
 const NAV_ITEMS = [
+  { label: "ホーム", href: "/" },
   { label: "機能", href: "/features" },
   { label: "料金", href: "/pricing" },
   { label: "FAQ", href: "/faq" },
@@ -65,7 +66,7 @@ export function Header() {
             href="https://roomly.jp/login?demo=1"
             className="inline-flex h-10 items-center rounded-full border border-rm-border-strong px-[18px] text-[14px] font-medium text-rm-primary transition-colors hover:bg-rm-surface"
           >
-            ログイン
+            デモを試す
           </a>
           <a
             href="https://roomly.jp/signup"
@@ -110,7 +111,7 @@ export function Header() {
               href="https://roomly.jp/login?demo=1"
               className="flex-1 rounded-full border border-rm-border-strong py-2.5 text-center text-[14px] font-medium text-rm-primary"
             >
-              ログイン
+              デモを試す
             </a>
             <a
               href="https://roomly.jp/signup"

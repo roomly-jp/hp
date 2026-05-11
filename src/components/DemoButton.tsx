@@ -32,7 +32,7 @@ export function DemoButtonPricing() {
         className="mt-3 flex items-center justify-center gap-2 rounded border border-rm-border py-3 text-[13px] font-medium text-rm-text-secondary transition-colors hover:bg-rm-bg"
       >
         <Play size={13} />
-        デモ環境を試す（登録不要）
+        デモを試す（登録不要）
       </a>
       <p className="mt-2 text-center text-[11px] text-rm-text-muted">
         ID: demo@roomly.jp / PW: demo1234

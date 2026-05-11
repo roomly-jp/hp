@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+
 
 export const metadata: Metadata = {
   title: "料金プラン",
@@ -33,13 +33,6 @@ const tiers: [string, string, boolean][] = [
   ["2,001区画〜", "1,000区画ごとに+¥5,000（税込）/月", false],
 ];
 
-const faqs = [
-  { q: "無料プランに期限はありますか？", a: "いいえ。10区画以内であれば、期限なくずっと無料でお使いいただけます。" },
-  { q: "プラン変更はいつでもできますか？", a: "はい。区画数の増減に応じて、いつでもプランを変更できます。日割り計算で精算されます。" },
-  { q: "2,001区画以上の場合はどうなりますか？", a: "上の料金表のとおり、1,000区画ごとに+¥5,000（税込）/月が加算されます。" },
-  { q: "解約時の違約金はありますか？", a: "ありません。いつでも解約でき、違約金は一切発生しません。" },
-  { q: "支払い方法は？", a: "クレジットカード（Visa / Mastercard / JCB）に対応予定です。無料プランではカード登録不要です。" },
-];
 
 export default function PricingPage() {
   return (
@@ -76,36 +69,22 @@ export default function PricingPage() {
               ))}
             </ul>
             <div className="mt-7 flex flex-wrap gap-2.5">
+              <a href="https://roomly.jp/login?demo=1" className="inline-flex h-10 items-center rounded-full border border-rm-border-strong px-[18px] text-[14px] font-medium text-rm-primary transition-colors hover:bg-rm-surface-tint">
+                デモを試す
+              </a>
               <a href="https://roomly.jp/signup" className="inline-flex h-10 items-center gap-2 rounded-full bg-rm-primary px-[18px] text-[14px] font-medium text-rm-bg transition-colors hover:bg-rm-accent-deep hover:text-white">
                 無料で始める
               </a>
-              <a href="https://roomly.jp/login?demo=1" className="inline-flex h-10 items-center rounded-full border border-rm-border-strong px-[18px] text-[14px] font-medium text-rm-primary transition-colors hover:bg-rm-surface-tint">
-                デモ環境を試す
-              </a>
             </div>
+            <p className="mt-4 text-[12px] text-rm-text-muted">
+              ※ 10区画を超えても自動課金されることはありません。有料プランへの移行はクレジットカード登録後、ご自身で切り替えるまで発生しません。
+            </p>
           </div>
           <div className="rounded-xl border border-rm-border bg-rm-bg overflow-hidden">
             {tiers.map(([range, price, free]) => (
               <div key={range} className={`flex items-center justify-between px-[18px] py-3.5 text-[14px] border-b border-rm-border last:border-b-0 ${free ? "bg-rm-accent-tint" : ""}`}>
                 <span>{range}</span>
                 <span className={`font-mono text-[13px] font-medium ${free ? "text-rm-accent-deep font-semibold" : "text-rm-text"}`}>{price}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 料金FAQ */}
-      <section className="bg-rm-surface-tint px-7 py-24">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-[clamp(24px,3vw,36px)] font-medium tracking-tight">
-            よくある質問
-          </h2>
-          <div className="mt-10 space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-2xl border border-rm-border bg-rm-surface p-6">
-                <p className="text-[15px] font-semibold text-rm-primary">{faq.q}</p>
-                <p className="mt-2 text-[14px] leading-relaxed text-rm-text-secondary">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -122,12 +101,12 @@ export default function PricingPage() {
             10区画まで無料。クレジットカード不要で、すぐに始められます。
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="https://roomly.jp/login?demo=1" className="inline-flex h-12 items-center rounded-full border border-rm-border-strong px-[22px] text-[15px] font-medium text-rm-primary transition-colors hover:bg-rm-surface">
+              デモを試す
+            </a>
             <a href="https://roomly.jp/signup" className="inline-flex h-12 items-center rounded-full bg-rm-primary px-[22px] text-[15px] font-medium text-rm-bg transition-colors hover:bg-rm-accent-deep hover:text-white">
               無料で始める
             </a>
-            <Link href="/contact" className="inline-flex h-12 items-center rounded-full border border-rm-border-strong px-[22px] text-[15px] font-medium text-rm-primary transition-colors hover:bg-rm-surface">
-              お問い合わせ
-            </Link>
           </div>
         </div>
       </section>
