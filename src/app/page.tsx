@@ -225,85 +225,28 @@ export default function Home() {
 
       {/* 料金 */}
       <section id="pricing" className="bg-rm-surface px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-xl">
-          <h2 className="text-center text-xl font-semibold text-rm-primary sm:text-2xl">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-xl font-semibold text-rm-primary sm:text-2xl">
             料金
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-[14px] text-rm-text-secondary">
+          <p className="mx-auto mt-4 max-w-xl text-[14px] text-rm-text-secondary">
             10区画まで無料。それ以上は区画数に応じたシンプルな料金体系です。
+            <br />
+            全プランで全機能が使えます。初期費用・違約金なし。
           </p>
-          <div className="mt-14 rounded bg-rm-surface p-8 shadow-sm border-t-3 border-t-rm-accent">
-            <div className="text-center">
-              <p className="text-[11px] font-medium uppercase tracking-wider text-rm-accent">全機能利用可能</p>
-              <div className="mt-3">
-                <span className="text-4xl font-semibold tabular-nums text-rm-accent">¥0</span>
-                <span className="ml-1 text-rm-text-muted">/ 10区画まで</span>
-              </div>
-            </div>
-            <div className="mt-8 space-y-2 text-[13px] text-rm-text-secondary">
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜10区画</span>
-                <span className="font-semibold text-rm-accent">無料</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜50区画</span>
-                <span className="font-semibold text-rm-text">¥5,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜100区画</span>
-                <span className="font-semibold text-rm-text">¥10,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜300区画</span>
-                <span className="font-semibold text-rm-text">¥15,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜500区画</span>
-                <span className="font-semibold text-rm-text">¥20,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜1,000区画</span>
-                <span className="font-semibold text-rm-text">¥25,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>〜2,000区画</span>
-                <span className="font-semibold text-rm-text">¥30,000（税込）/月</span>
-              </div>
-              <div className="flex items-center justify-between rounded bg-rm-bg p-3">
-                <span>2,001区画〜</span>
-                <span className="font-semibold text-rm-text">1,000区画ごとに+¥5,000（税込）/月</span>
-              </div>
-            </div>
-            <ul className="mt-6 space-y-2 text-[13px] text-rm-text-secondary">
-              {["初期費用なし", "全プラン全機能利用可能", "クレジットカード不要で開始", "メールサポート付き"].map(
-                (item) => (
-                  <li key={item} className="flex items-center gap-2.5">
-                    <CheckCircle2
-                      size={14}
-                      className="shrink-0 text-rm-accent"
-                    />
-                    {item}
-                  </li>
-                )
-              )}
-            </ul>
-            <a
-              href="https://roomly.jp"
-              className="mt-8 block rounded bg-rm-accent py-3 text-center text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
-            >
-              無料で始める
-            </a>
-            <a
-              href="https://roomly.jp/login"
-              className="mt-3 flex items-center justify-center gap-2 rounded border border-rm-border py-3 text-[13px] font-medium text-rm-text-secondary transition-colors hover:bg-rm-bg"
-            >
-              <Play size={13} />
-              デモ環境を試す（登録不要）
-            </a>
-            <p className="mt-2 text-center text-[11px] text-rm-text-muted">
-              ID: demo@roomly.jp / PW: demo1234
-            </p>
+          <div className="mt-10 inline-flex items-baseline gap-1">
+            <span className="text-4xl font-semibold tabular-nums text-rm-accent">¥0</span>
+            <span className="text-rm-text-muted">/ 10区画まで</span>
           </div>
+          <p className="mt-2 text-[13px] text-rm-text-muted">
+            11区画以上は¥5,000（税込）/月〜
+          </p>
+          <Link
+            href="/pricing"
+            className="mt-8 inline-block rounded bg-rm-accent px-8 py-3 text-[13px] font-medium text-white transition-colors hover:bg-rm-accent-light"
+          >
+            料金の詳細はこちら
+          </Link>
         </div>
       </section>
 
