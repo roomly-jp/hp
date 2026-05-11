@@ -276,7 +276,7 @@ export default function Home() {
           </Reveal>
           <div className="mt-9 text-center">
             <Link href="/column" className="inline-flex h-10 items-center gap-2 rounded-full border border-rm-border-strong px-[18px] text-[14px] font-medium text-rm-primary transition-colors hover:bg-rm-surface">
-              コラム一覧を見る {ARROW_SVG}
+              コラム一覧を見る
             </Link>
           </div>
         </div>
