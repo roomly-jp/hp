@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-  process.env.INQUIRY_SUPABASE_URL!,
-  process.env.INQUIRY_SUPABASE_ANON_KEY!
+  process.env.ROOMLY_SUPABASE_URL!,
+  process.env.ROOMLY_SUPABASE_ANON_KEY!
 );
 
 export async function POST(request: NextRequest) {
