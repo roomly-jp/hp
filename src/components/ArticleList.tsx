@@ -71,6 +71,7 @@ export default function ArticleList({ articles, currentPage }: Props) {
               {currentPage > 1 ? (
                 <Link
                   href={currentPage === 2 ? "/column" : `/column/page/${currentPage - 1}`}
+                  scroll={false}
                   className="rounded-full border border-rm-border px-4 py-2 text-[13px] text-rm-text-secondary transition-colors hover:bg-rm-surface"
                 >
                   ← 前へ
@@ -106,6 +107,7 @@ export default function ArticleList({ articles, currentPage }: Props) {
                     <Link
                       key={page}
                       href={page === 1 ? "/column" : `/column/page/${page}`}
+                      scroll={false}
                       className={`rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${
                         page === currentPage
                           ? "bg-rm-primary text-rm-bg"
@@ -121,6 +123,7 @@ export default function ArticleList({ articles, currentPage }: Props) {
               {currentPage < totalPages ? (
                 <Link
                   href={`/column/page/${currentPage + 1}`}
+                  scroll={false}
                   className="rounded-full border border-rm-border px-4 py-2 text-[13px] text-rm-text-secondary transition-colors hover:bg-rm-surface"
                 >
                   次へ →
